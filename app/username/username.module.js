@@ -1,1 +1,3 @@
-angular.module('username', [])
+angular.module('username', [
+    'core.registration-service'
+])

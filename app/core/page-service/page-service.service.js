@@ -1,6 +1,6 @@
 angular.module('core.page-service')
-    .factory('PageService', [ '$route', '$location',
-        function($route, $location) {
+    .factory('PageService', ['$location',
+        function($location) {
             var self = {
                 routes: ['registration', 'username', 'password'],
                 next: function() {
@@ -9,7 +9,6 @@ angular.module('core.page-service')
 
                     for(var i=0; i < self.routes.length; i++) {
                         if(found) {
-                            console.log($location)
                             $location.path(self.routes[i])
                             return;
                         } else {
