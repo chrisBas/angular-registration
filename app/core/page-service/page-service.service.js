@@ -2,7 +2,7 @@ angular.module('core.page-service')
     .factory('PageService', [ '$route', '$location',
         function($route, $location) {
             var self = {
-                routes: ['registration', 'username'],
+                routes: ['registration', 'username', 'password'],
                 next: function() {
                     var current = $location.path().replace("/", "");
                     var found = false;
@@ -45,7 +45,24 @@ angular.module('core.page-service')
                     } else {
                         console.error(current + " is not maintained by PageService")
                     }
-                    return;                }
+                    return;                
+                },
+                directions: function() {
+                    var current = $location.path().replace("/", "");
+                    var idx = -1;
+
+                    for(var i=0; i < self.routes.length; i++) {
+                        if(self.routes[i] == current) {
+                            idx = i;
+                            break;
+                        }
+                    }
+
+                    return {
+                        next: idx < self.routes.length-1,
+                        prev: idx > 0
+                    }
+                }
             }
             return self;
         }

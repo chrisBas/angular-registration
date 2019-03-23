@@ -6,6 +6,7 @@ angular.module('registrationApp')
                 .when('/phones/:phoneId', {template: '<phone-detail></phone-detail>'})
                 .when('/registration', {template: '<landing></landing>'})
                 .when('/username', {template: '<username></username>'})
+                .when('/password', {template: '<password></password>'})
                 .otherwise('/registration');
         }
     ]);
