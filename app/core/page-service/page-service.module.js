@@ -1,1 +1,1 @@
-angular.module('core.page-service', [])
+angular.module('core.page-service', ['ngRoute'])
