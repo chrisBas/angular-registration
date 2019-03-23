@@ -9,6 +9,7 @@ angular.module('core.page-service')
 
                     for(var i=0; i < self.routes.length; i++) {
                         if(found) {
+                            console.log($location)
                             $location.path(self.routes[i])
                             return;
                         } else {

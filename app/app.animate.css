@@ -45,23 +45,21 @@
 }
 
 .view-frame.ng-enter {
-  animation: 1s fade-in;
-  z-index: 100;
+  transition:0.5s linear all;
+  transform:translatex(100%);
+}
+
+.view-frame.ng-enter.ng-enter-active {
+  transform:translateX(0);
 }
 
 .view-frame.ng-leave {
-  animation: 1s fade-out;
-  z-index: 99;
+  transition:0.5s linear all;
+  transform:translateX(0);
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fade-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+.view-frame.ng-leave.ng-leave-active {
+  transform:translateX(-100%);
 }
 
 /* Older browsers might need vendor-prefixes for keyframes and animation! */
