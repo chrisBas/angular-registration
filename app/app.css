@@ -91,3 +91,14 @@ body {
     font-size: 1.2em;
     font-weight: bold;
   }
+
+  .view-frame {
+    height: 400px;
+  }
+  .page-frame {
+    height: 90%;
+  }
+  .stepper-container>button {
+    width: 90px;
+    margin: 18px;
+  }
