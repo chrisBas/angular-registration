@@ -6,5 +6,7 @@ angular.module('registrationApp', [
     'phoneDetail',
     'landing',
     'username',
-    'password'
+    'password',
+    'confirm-password',
+    'confirmation'
 ])

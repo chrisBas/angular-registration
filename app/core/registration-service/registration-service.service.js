@@ -3,7 +3,8 @@ angular.module('core.registration-service')
         function() {
             var self = {
                 username: '',
-                password: ''
+                password: '',
+                confirmPassword: ''
             }
             return self;
         }

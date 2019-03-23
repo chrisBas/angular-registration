@@ -2,7 +2,7 @@ angular.module('core.page-service')
     .factory('PageService', ['$location',
         function($location) {
             var self = {
-                routes: ['registration', 'username', 'password'],
+                routes: ['registration', 'username', 'password', 'confirm-password', 'confirmation'],
                 next: function() {
                     var current = $location.path().replace("/", "");
                     var found = false;
