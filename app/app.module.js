@@ -3,5 +3,6 @@ angular.module('registrationApp', [
     'ngAnimate',
     'core',
     'phoneList',
-    'phoneDetail'
+    'phoneDetail',
+    'landing'
 ])
