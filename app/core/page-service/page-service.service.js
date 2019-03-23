@@ -9,7 +9,7 @@ angular.module('core.page-service')
 
                     for(var i=0; i < self.routes.length; i++) {
                         if(found) {
-                            $location.path("/" + self.routes[i])
+                            $location.path(self.routes[i])
                             return;
                         } else {
                             if(self.routes[i] == current) {
@@ -31,7 +31,7 @@ angular.module('core.page-service')
 
                     for(var i=self.routes.length-1; i >= 0; i--) {
                         if(found) {
-                            $location.path("/" + self.routes[i])
+                            $location.path(self.routes[i])
                             return;
                         } else {
                             if(self.routes[i] == current) {
