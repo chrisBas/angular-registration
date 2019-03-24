@@ -4,8 +4,8 @@ angular.module('confirmation')
         controller: [ 'RegistrationService',
             function ConfirmationComponent(RegistrationService) {
                 var self = this;
-                self.username = RegistrationService.username
-                self.password = RegistrationService.password
+                self.username = RegistrationService.getUsername()
+                self.password = RegistrationService.getPassword()
 
                 self.submit = function() {
                     alert('Form Completed')

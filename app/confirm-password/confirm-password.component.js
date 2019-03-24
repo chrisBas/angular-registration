@@ -6,16 +6,16 @@ angular.module('confirm-password')
                 var self = this;
                 var message = "passwords do not match"
 
-                self.confirmPassword = RegistrationService.confirmPassword;
+                self.confirmPassword = RegistrationService.getConfirmPassword();
                 self.errorMsg = ""
 
                 self.updateConfirmPassword = function()  {
-                    RegistrationService.confirmPassword = self.confirmPassword;
+                    RegistrationService.setConfirmPassword(self.confirmPassword);
                     self.errorMsg = ""
                 }
 
                 self.next = function() {
-                    if(RegistrationService.confirmPassword != RegistrationService.password) {
+                    if(RegistrationService.getConfirmPassword() != RegistrationService.getPassword()) {
                         self.errorMsg = message
                         return false;
                     }

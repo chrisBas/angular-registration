@@ -7,11 +7,11 @@ angular.module('password')
                 var regExp = /^\w{8,20}$/
                 var message = "password must contain 8-20 alpha-numeric or _ characters"
 
-                self.password = RegistrationService.password;
+                self.password = RegistrationService.getPassword();
                 self.errorMsg = ""
 
                 self.updatePassword = function()  {
-                    RegistrationService.password = self.password;
+                    RegistrationService.setPassword(self.password);
                     self.errorMsg = ""
                 }
 

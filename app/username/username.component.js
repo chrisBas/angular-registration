@@ -7,11 +7,11 @@ angular.module('username')
                 var regExp = /^\w{8,20}$/
                 var message = "username must contain 8-20 alpha-numeric or _ characters"
 
-                self.username = RegistrationService.username
+                self.username = RegistrationService.getUsername()
                 self.errorMsg = ""
 
                 self.updateUsername = function() {
-                    RegistrationService.username = self.username
+                    RegistrationService.setUsername(self.username)
                     self.errorMsg = ""
                 }
 
