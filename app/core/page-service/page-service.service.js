@@ -62,6 +62,15 @@ angular.module('core.page-service')
                         next: idx < self.routes.length-1,
                         prev: idx > 0
                     }
+                },
+                relativeLocation: function() {
+                    var locations = []
+                    var current = $location.path().replace("/", "");
+
+                    for(var i=0; i < self.routes.length; i++) {
+                        locations.push(self.routes[i] == current)
+                    }
+                    return locations
                 }
             }
             return self;
