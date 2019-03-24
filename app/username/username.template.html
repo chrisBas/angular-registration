@@ -1,4 +1,5 @@
-<standard-page>
+<standard-page on-next="$ctrl.next">
     <label>Username:</label>
     <input ng-model="$ctrl.username" ng-change="$ctrl.updateUsername()">
+    <div ng-if="$ctrl.errorMsg" class="error">{{$ctrl.errorMsg}}</div>
 </standard-page>
