@@ -92,13 +92,21 @@ body {
     font-weight: bold;
   }
 
-  .view-frame {
+
+  .page-container {
     height: 400px;
   }
   .page-frame {
-    height: 90%;
+    height: 100%;
+  }
+  .page-frame-inner {
+    height: calc(100% - 70px);
   }
   .stepper-container>button {
     width: 90px;
     margin: 18px;
+  }
+  .eyebrow * {
+    font-size: 22px;
+    font-family: Verdana,sans-serif;
   }

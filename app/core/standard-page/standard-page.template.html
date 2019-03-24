@@ -1,5 +1,9 @@
 <eyebrow />
-<div class="page-frame">
-    <div ng-transclude></div>
+<div class="page-container">
+    <div ng-if=true class="page-frame">
+        <div class="page-frame-inner">
+            <div ng-transclude></div>
+        </div>
+        <page-stepper />
+    </div>
 </div>
-<page-stepper />
