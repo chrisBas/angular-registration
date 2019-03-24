@@ -9,7 +9,7 @@ It is a simple application that goes through a registration process in a modular
 Checking the 'diffs' in the commit history is an easy way to learn to implement different pieces as well as show how this project was created from start to finish.
 
 
-## Development with `angular-phonecat`
+## Development with `angular-registration`
 
 The following docs describe how you can install and develop this application further.
 
