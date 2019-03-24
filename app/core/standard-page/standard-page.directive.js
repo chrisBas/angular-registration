@@ -42,6 +42,22 @@ angular.module('core.standard-page')
                             scope.hasPrev = directions.prev;
                             scope.nextPage = self.nextPage
                             scope.prevPage = self.prevPage
+                            
+                            
+
+                           
+                        },
+                        post: function(scope, elem, att) {
+                            // add 'enter' listener on all inputs
+                            $(".page-frame input").on('keypress',function(e) {
+                                if(e.which == 13) {
+                                    $('#next-btn').click()
+                                }
+                            });
+                            // focus on the first input (if present)
+                            $(elem).find(".page-frame").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+                                var firstInput = $((".page-frame input:first")).focus()
+                            })
                         }
                     }
                 }
