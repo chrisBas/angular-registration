@@ -1,4 +1,4 @@
-<standard-page on-next="$ctrl.next">
+<standard-page on-next="$ctrl.next" title="'Lets start by creating your login credentials!'">
     <label>Username:</label>
     <input ng-model="$ctrl.username" ng-change="$ctrl.updateUsername()">
     <div ng-if="$ctrl.errorMsg" class="error">{{$ctrl.errorMsg}}</div>

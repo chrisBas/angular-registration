@@ -28,7 +28,9 @@ angular.module('core.standard-page')
                 templateUrl: 'core/standard-page/standard-page.template.html',
                 scope: {
                     'onNext': '=',
-                    'onPrev': '='
+                    'onPrev': '=',
+                    'onSubmit': '=',
+                    'title': '='
                 },
                 compile: function(element, attr) {
                     return {

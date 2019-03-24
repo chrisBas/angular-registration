@@ -1,5 +1,4 @@
-<standard-page>
-    Confirm the following details are correct.
+<standard-page on-submit="$ctrl.submit" title="'Do the following details seem correct?'">
     <div>
         <label>Username:</label>
         <span>{{$ctrl.username}}</span>
@@ -7,9 +6,5 @@
     <div>
         <label>Password:</label>
         <span>{{$ctrl.password}}</span>
-    </div>
-    <div>
-        <label>Confirm Password:</label>
-        <span>{{$ctrl.confirmPassword}}</span>
     </div>
 </standard-page>

@@ -1,13 +1,14 @@
 <eyebrow />
 <div class="page-container">
     <div class="page-frame">
-        <div class="page-frame-inner">
-            <div ng-transclude></div>
+        <div class="page-frame-inner col-md-12 text-center">
+            <div class="title">{{title}}</div>
+            <div ng-transclude class="description"></div>
         </div>
         <div class="stepper-container col-md-12 text-center">
             <button class="btn btn-success" ng-click="prevPage(onPrev)" ng-if="hasPrev">Previous</button>
-            <button class="btn btn-primary" ng-click="nextPage(onNext)" ng-if="hasNext">{{hasPrev ? "Next" : "Start"}}</button>
-            <button class="btn btn-primary" ng-if="!hasNext">Submit</button>
+            <button class="btn btn-primary" ng-click="nextPage(onNext)" ng-if="hasNext">{{hasPrev ? "Next" : "Continue"}}</button>
+            <button class="btn btn-primary" ng-if="!hasNext && onSubmit" ng-click="onSubmit()">Submit</button>
         </div>
     </div>
 </div>

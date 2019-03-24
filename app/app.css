@@ -6,6 +6,7 @@ body {
 }
 .page-frame {
   height: 100%;
+  padding-top: 80px;
 }
 .page-frame-inner {
   height: calc(100% - 70px);
@@ -20,4 +21,13 @@ body {
 }
 .error {
   color: red;
+  margin: 12px;
+}
+.title {
+  font-size: 2em;
+  margin: 40px;
+}
+.description {
+  font-size: 1.2em;
+  margin: 40px;
 }

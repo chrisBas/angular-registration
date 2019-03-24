@@ -6,7 +6,10 @@ angular.module('confirmation')
                 var self = this;
                 self.username = RegistrationService.username
                 self.password = RegistrationService.password
-                self.confirmPassword = RegistrationService.confirmPassword
+
+                self.submit = function() {
+                    alert('Form Completed')
+                }
                 
             }
         ]
