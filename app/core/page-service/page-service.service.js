@@ -3,12 +3,14 @@ angular.module('core.page-service')
         function($location) {
             var self = {
                 routes: ['registration', 'username', 'password', 'confirm-password', 'confirmation'],
+                currentDirectionRight: false,
                 next: function() {
                     var current = $location.path().replace("/", "");
                     var found = false;
 
                     for(var i=0; i < self.routes.length; i++) {
                         if(found) {
+                            self.currentDirectionRight = false
                             $location.path(self.routes[i])
                             return;
                         } else {
@@ -31,6 +33,7 @@ angular.module('core.page-service')
 
                     for(var i=self.routes.length-1; i >= 0; i--) {
                         if(found) {
+                            self.currentDirectionRight = true
                             $location.path(self.routes[i])
                             return;
                         } else {

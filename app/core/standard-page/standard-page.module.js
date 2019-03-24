@@ -1,1 +1,3 @@
-angular.module('core.standard-page', [])
+angular.module('core.standard-page', [
+    'core.page-service'
+])

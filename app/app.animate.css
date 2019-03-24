@@ -26,23 +26,60 @@
   padding-top: 15px;
 }
 
-/* Animate view transitions with `ngView` */
-.page-frame.ng-enter {
-  transition:0.5s linear all;
-  transform:translateX(100%);
+
+
+@keyframes inRight {
+  from {
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+  }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes inLeft {
+  from {
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+  }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes outRight {
+  from { transform: translate3d(0, 0, 0); }
+  to {
+      visibility: hidden;
+      transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes outLeft {
+  from { transform: translate3d(0, 0, 0); }
+  to {
+      visibility: hidden;
+      transform: translate3d(-100%, 0, 0);
+  }
 }
 
-.page-frame.ng-enter.ng-enter-active {
-  transform:translateX(0);
-}
 
-.page-frame.ng-leave {
-  transition:0.5s linear all;
-  transform:translateX(0);
-}
 
-.page-frame.ng-leave.ng-leave-active {
-  transform:translateX(-100%);
-}
 
-/* Older browsers might need vendor-prefixes for keyframes and animation! */
+
+
+/* SLIDE DEFINITIONS */
+.inRight {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: inRight;
+}
+.inLeft {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: inLeft;
+}
+.outRight {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: outRight;
+}
+.outLeft {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: outLeft;
+}
