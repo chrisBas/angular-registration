@@ -11,6 +11,7 @@ angular.module('core.page-service')
                     for(var i=0; i < self.routes.length; i++) {
                         if(found) {
                             self.currentDirectionRight = false
+                            updateLocalStorage(self.routes[i])
                             $location.path(self.routes[i])
                             return;
                         } else {
@@ -34,6 +35,7 @@ angular.module('core.page-service')
                     for(var i=self.routes.length-1; i >= 0; i--) {
                         if(found) {
                             self.currentDirectionRight = true
+                            updateLocalStorage(self.routes[i])
                             $location.path(self.routes[i])
                             return;
                         } else {
@@ -74,8 +76,29 @@ angular.module('core.page-service')
                         locations.push(self.routes[i] == current)
                     }
                     return locations
+                },
+                getVisited: function() {
+                        var idx = 0
+                        for(var i=0; i<visited.length; i++) {
+                            if(self.routes[idx] == visited[i]) {
+                                idx++;
+                            }
+                        }
+                        return self.routes.slice(0,idx)
                 }
             }
+
+            var visited = ['registration']
+
+            if(localStorage.visitedStorage) {
+                visited = JSON.parse(localStorage.visitedStorage);
+            }
+
+            function updateLocalStorage(nextPg) {
+                visited.push(nextPg)
+                localStorage.visitedStorage = JSON.stringify(visited)
+            }
+            
             return self;
         }
 ])

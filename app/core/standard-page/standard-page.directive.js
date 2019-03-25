@@ -1,6 +1,6 @@
 angular.module('core.standard-page')
-    .directive('standardPage', ['PageService',
-        function(PageService) {
+    .directive('standardPage', ['PageService','$location',
+        function(PageService, $location) {
             var self = this
 
             self.prevPage = function(callback) {
@@ -35,17 +35,22 @@ angular.module('core.standard-page')
                 compile: function(element, attr) {
                     return {
                         pre: function(scope, elem, att) {
-                            var directions = PageService.directions();
+                            //prevent load if other pages have not yet completed
+                            var visited = PageService.getVisited()
+                            if(!visited.includes($location.path().replace("/",""))) {
+                                PageService.currentDirectionRight = false
+                                $location.path(visited.slice(-1)[0])
+                            }
 
-                            $(elem).find(".page-frame").addClass(PageService.currentDirectionRight ? "inLeft" : "inRight")
+                            // load content for view
+                            var directions = PageService.directions();
                             scope.hasNext = directions.next;
                             scope.hasPrev = directions.prev;
                             scope.nextPage = self.nextPage
                             scope.prevPage = self.prevPage
-                            
-                            
 
-                           
+                            // add class for transition
+                            $(elem).find(".page-frame").addClass(PageService.currentDirectionRight ? "inLeft" : "inRight")                           
                         },
                         post: function(scope, elem, att) {
                             // add 'enter' listener on all inputs

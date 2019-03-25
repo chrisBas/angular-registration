@@ -9,8 +9,6 @@ angular.module('core.registration-service')
 
             if(localStorage.registrationUserStorage) {
                 registration = JSON.parse(localStorage.registrationUserStorage);
-            } else {
-                updateLocalStorage()
             }
 
             function updateLocalStorage() {
